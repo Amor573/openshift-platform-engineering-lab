@@ -1,0 +1,17 @@
+# Do not publish local cluster access or credentials
+kubeconfig
+kubeconfig.*
+.kube/
+*.key
+*.pem
+*.p12
+*.pfx
+.env
+.env.*
+secrets/
+credentials/
+*.tfstate
+*.tfstate.*
+.DS_Store
+.vscode/
+.idea/

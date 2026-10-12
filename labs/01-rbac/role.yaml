@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: read-only-namespaced
+  namespace: platform-lab
+rules:
+  - apiGroups: ["", "apps", "batch", "networking.k8s.io"]
+    resources: ["pods", "pods/log", "services", "configmaps", "persistentvolumeclaims", "deployments", "replicasets", "jobs", "cronjobs", "ingresses"]
+    verbs: ["get", "list", "watch"]

@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-writer
+  namespace: platform-storage-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-writer
+  template:
+    metadata:
+      labels:
+        app: data-writer
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: writer
+          image: registry.access.redhat.com/ubi9/ubi-minimal:latest
+          command:
+            - /bin/sh
+            - -c
+            - 'while true; do date >> /data/events.log; sleep 30; done'
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: [ALL]
+          volumeMounts:
+            - name: persistent-data
+              mountPath: /data
+          resources:
+            requests:
+              cpu: 20m
+              memory: 64Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+      volumes:
+        - name: persistent-data
+          persistentVolumeClaim:
+            claimName: app-data
