@@ -45,3 +45,8 @@ Build repeatable OpenShift operating procedures for storage, backups, authorizat
 [![Validate lab YAML structure](https://github.com/Amor573/openshift-platform-engineering-lab/actions/workflows/yaml-check.yml/badge.svg)](https://github.com/Amor573/openshift-platform-engineering-lab/actions/workflows/yaml-check.yml)
 
 A lightweight CI job now parses every lab YAML resource and checks that common identity fields exist. **This is not an OpenShift deployment test.** Follow the [proof-collection checklist](docs/proof-collection.md) and record only validated cluster outcomes in [EVIDENCE.md](EVIDENCE.md).
+
+
+## Selected visual evidence
+
+See [historical evidence and its limits](VISUAL-EVIDENCE.md). These related captures do not establish that the Terraform or lab manifests in this repository were executed.
