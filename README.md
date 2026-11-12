@@ -39,3 +39,9 @@ Then proceed to [Lab 02](labs/02-persistent-storage/README.md). Use [EVIDENCE.md
 Build repeatable OpenShift operating procedures for storage, backups, authorization and troubleshooting. Add real-world evidence only after lab validation. See [portfolio notes](docs/portfolio-notes.md).
 
 **Skills:** Red Hat OpenShift · Kubernetes · ODF/Ceph RBD · OADP/Velero · RBAC · Linux · CSI · Troubleshooting.
+
+## Automated checks and evidence
+
+[![Validate lab YAML structure](https://github.com/Amor573/openshift-platform-engineering-lab/actions/workflows/yaml-check.yml/badge.svg)](https://github.com/Amor573/openshift-platform-engineering-lab/actions/workflows/yaml-check.yml)
+
+A lightweight CI job now parses every lab YAML resource and checks that common identity fields exist. **This is not an OpenShift deployment test.** Follow the [proof-collection checklist](docs/proof-collection.md) and record only validated cluster outcomes in [EVIDENCE.md](EVIDENCE.md).
